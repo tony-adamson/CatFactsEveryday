@@ -17,6 +17,8 @@
 		020627672ABEACE500C0C7BD /* CatFactsEverydayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627662ABEACE500C0C7BD /* CatFactsEverydayUITests.swift */; };
 		020627692ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627682ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift */; };
 		020627762ABEBBA700C0C7BD /* DataCatFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627752ABEBBA700C0C7BD /* DataCatFact.swift */; };
+		020627782ABF0ECA00C0C7BD /* TranslateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627772ABF0ECA00C0C7BD /* TranslateData.swift */; };
+		0206277B2ABF15D300C0C7BD /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0206277A2ABF15D300C0C7BD /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		020627662ABEACE500C0C7BD /* CatFactsEverydayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsEverydayUITests.swift; sourceTree = "<group>"; };
 		020627682ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsEverydayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		020627752ABEBBA700C0C7BD /* DataCatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCatFact.swift; sourceTree = "<group>"; };
+		020627772ABF0ECA00C0C7BD /* TranslateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0206277B2ABF15D300C0C7BD /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 				020627502ABEACE500C0C7BD /* LaunchScreen.storyboard */,
 				020627532ABEACE500C0C7BD /* Info.plist */,
 				020627752ABEBBA700C0C7BD /* DataCatFact.swift */,
+				020627772ABF0ECA00C0C7BD /* TranslateData.swift */,
 			);
 			path = CatFactsEveryday;
 			sourceTree = "<group>";
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = CatFactsEveryday;
+			packageProductDependencies = (
+				0206277A2ABF15D300C0C7BD /* OpenAISwift */,
+			);
 			productName = CatFactsEveryday;
 			productReference = 020627422ABEACE400C0C7BD /* CatFactsEveryday.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 020627392ABEACE400C0C7BD;
+			packageReferences = (
+				020627792ABF15D300C0C7BD /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 020627432ABEACE400C0C7BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020627782ABF0ECA00C0C7BD /* TranslateData.swift in Sources */,
 				020627762ABEBBA700C0C7BD /* DataCatFact.swift in Sources */,
 				0206274A2ABEACE400C0C7BD /* CatFactViewController.swift in Sources */,
 				020627462ABEACE400C0C7BD /* AppDelegate.swift in Sources */,
@@ -449,6 +461,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +490,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		020627792ABF15D300C0C7BD /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0206277A2ABF15D300C0C7BD /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 020627792ABF15D300C0C7BD /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0206273A2ABEACE400C0C7BD /* Project object */;
 }

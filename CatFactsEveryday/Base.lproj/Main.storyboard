@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,16 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POu-If-D6a">
-                                <rect key="frame" x="125.66666666666669" y="751" width="142" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Получить факт"/>
-                                <connections>
-                                    <action selector="getCatFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUE-Bf-vKT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cEi-LM-w7D">
+                                <rect key="frame" x="46.666666666666657" y="751.66666666666663" width="300" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POu-If-D6a">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Получить факт"/>
+                                        <connections>
+                                            <action selector="getCatFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUE-Bf-vKT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPy-vI-pam">
+                                        <rect key="frame" x="158" y="0.0" width="142" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Перевод">
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="translateFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sqF-H9-NYD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Для получения факта о кошках, нажмите на кнопку кнопку внизу экрана" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VPq-hx-eKr">
-                                <rect key="frame" x="16" y="208" width="361" height="256"/>
+                                <rect key="frame" x="16" y="207.33333333333337" width="361" height="256"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="gHC-Is-fxO"/>
@@ -35,7 +51,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересный факт о кошках:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAg-hu-j4c">
-                                <rect key="frame" x="16" y="123" width="223" height="21"/>
+                                <rect key="frame" x="16" y="122.99999999999999" width="223" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,10 +60,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="POu-If-D6a" secondAttribute="bottom" constant="32" id="4B1-2n-abE"/>
+                            <constraint firstItem="cEi-LM-w7D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7fJ-iz-eGi"/>
                             <constraint firstItem="PAg-hu-j4c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="AlX-GF-QmM"/>
                             <constraint firstItem="VPq-hx-eKr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H6R-bG-QoP"/>
-                            <constraint firstItem="POu-If-D6a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PfO-U8-9d5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cEi-LM-w7D" secondAttribute="bottom" constant="32" id="OVz-Yv-14Y"/>
                             <constraint firstItem="VPq-hx-eKr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ppq-hj-9Ds"/>
                             <constraint firstItem="PAg-hu-j4c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Rfg-WC-NRj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PAg-hu-j4c" secondAttribute="trailing" symbolic="YES" id="exz-Pz-8gY"/>
@@ -70,6 +86,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

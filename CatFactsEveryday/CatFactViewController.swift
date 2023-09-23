@@ -32,5 +32,21 @@ class CatFactViewController: UIViewController {
         }
     }
     
+    @IBAction func translateFact(_ sender: Any) {
+        if let text = catFact.text, !text.isEmpty {
+            let textToGPT = "Переведи на русский \(text)"
+            APICaller.shared.getResponse(input: textToGPT) { result in
+                switch result {
+                case .success(let output):
+                    DispatchQueue.main.async {
+                        print(output)
+                        self.catFact.text = output
+                    }
+                case .failure:
+                    print("Failed")
+                }
+            }
+        }
+    }
 }
 
