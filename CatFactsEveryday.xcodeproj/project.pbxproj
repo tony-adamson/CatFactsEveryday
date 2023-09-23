@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		020627462ABEACE400C0C7BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627452ABEACE400C0C7BD /* AppDelegate.swift */; };
 		020627482ABEACE400C0C7BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627472ABEACE400C0C7BD /* SceneDelegate.swift */; };
-		0206274A2ABEACE400C0C7BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627492ABEACE400C0C7BD /* ViewController.swift */; };
+		0206274A2ABEACE400C0C7BD /* CatFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627492ABEACE400C0C7BD /* CatFactViewController.swift */; };
 		0206274D2ABEACE400C0C7BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0206274B2ABEACE400C0C7BD /* Main.storyboard */; };
 		0206274F2ABEACE500C0C7BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0206274E2ABEACE500C0C7BD /* Assets.xcassets */; };
 		020627522ABEACE500C0C7BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020627502ABEACE500C0C7BD /* LaunchScreen.storyboard */; };
 		0206275D2ABEACE500C0C7BD /* CatFactsEverydayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206275C2ABEACE500C0C7BD /* CatFactsEverydayTests.swift */; };
 		020627672ABEACE500C0C7BD /* CatFactsEverydayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627662ABEACE500C0C7BD /* CatFactsEverydayUITests.swift */; };
 		020627692ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627682ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift */; };
+		020627762ABEBBA700C0C7BD /* DataCatFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020627752ABEBBA700C0C7BD /* DataCatFact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		020627422ABEACE400C0C7BD /* CatFactsEveryday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFactsEveryday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		020627452ABEACE400C0C7BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		020627472ABEACE400C0C7BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		020627492ABEACE400C0C7BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		020627492ABEACE400C0C7BD /* CatFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactViewController.swift; sourceTree = "<group>"; };
 		0206274C2ABEACE400C0C7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0206274E2ABEACE500C0C7BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		020627512ABEACE500C0C7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		020627622ABEACE500C0C7BD /* CatFactsEverydayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatFactsEverydayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		020627662ABEACE500C0C7BD /* CatFactsEverydayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsEverydayUITests.swift; sourceTree = "<group>"; };
 		020627682ABEACE500C0C7BD /* CatFactsEverydayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsEverydayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		020627752ABEBBA700C0C7BD /* DataCatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCatFact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				020627452ABEACE400C0C7BD /* AppDelegate.swift */,
 				020627472ABEACE400C0C7BD /* SceneDelegate.swift */,
-				020627492ABEACE400C0C7BD /* ViewController.swift */,
+				020627492ABEACE400C0C7BD /* CatFactViewController.swift */,
 				0206274B2ABEACE400C0C7BD /* Main.storyboard */,
 				0206274E2ABEACE500C0C7BD /* Assets.xcassets */,
 				020627502ABEACE500C0C7BD /* LaunchScreen.storyboard */,
 				020627532ABEACE500C0C7BD /* Info.plist */,
+				020627752ABEBBA700C0C7BD /* DataCatFact.swift */,
 			);
 			path = CatFactsEveryday;
 			sourceTree = "<group>";
@@ -258,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0206274A2ABEACE400C0C7BD /* ViewController.swift in Sources */,
+				020627762ABEBBA700C0C7BD /* DataCatFact.swift in Sources */,
+				0206274A2ABEACE400C0C7BD /* CatFactViewController.swift in Sources */,
 				020627462ABEACE400C0C7BD /* AppDelegate.swift in Sources */,
 				020627482ABEACE400C0C7BD /* SceneDelegate.swift in Sources */,
 			);
