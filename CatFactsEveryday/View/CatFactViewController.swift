@@ -48,5 +48,13 @@ class CatFactViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func saveFact(_ sender: Any) {
+        if let text = catFact.text, !text.isEmpty {
+            SavedFacts.arrayOfFacts.append(text)
+        }
+    }
+
+    
 }
 
