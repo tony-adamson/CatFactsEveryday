@@ -24,7 +24,6 @@
 		0264D23F2ABFFF6200117930 /* ChosenFactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264D23E2ABFFF6200117930 /* ChosenFactsTableViewController.swift */; };
 		0264D2412AC00C9000117930 /* SavedFactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264D2402AC00C9000117930 /* SavedFactsData.swift */; };
 		0264D2472AC0204500117930 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0264D2452AC0204500117930 /* DataModel.xcdatamodeld */; };
-		02ADBF992AD0514D004CFE21 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +64,6 @@
 		0264D23E2ABFFF6200117930 /* ChosenFactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenFactsTableViewController.swift; sourceTree = "<group>"; };
 		0264D2402AC00C9000117930 /* SavedFactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFactsData.swift; sourceTree = "<group>"; };
 		0264D2462AC0204500117930 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +95,7 @@
 		020627392ABEACE400C0C7BD = {
 			isa = PBXGroup;
 			children = (
+				0264D2452AC0204500117930 /* DataModel.xcdatamodeld */,
 				020627442ABEACE400C0C7BD /* CatFactsEveryday */,
 				0206275B2ABEACE500C0C7BD /* CatFactsEverydayTests */,
 				020627652ABEACE500C0C7BD /* CatFactsEverydayUITests */,
@@ -159,12 +158,10 @@
 		0264D23B2ABFD9D400117930 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				0264D2452AC0204500117930 /* DataModel.xcdatamodeld */,
 				020627772ABF0ECA00C0C7BD /* TranslateData.swift */,
 				020627752ABEBBA700C0C7BD /* DataCatFact.swift */,
 				0264D23C2ABFDA2600117930 /* CatPicData.swift */,
 				0264D2402AC00C9000117930 /* SavedFactsData.swift */,
-				02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -312,7 +309,6 @@
 				0264D23A2ABFD9C500117930 /* CatPictureViewController.swift in Sources */,
 				0206274A2ABEACE400C0C7BD /* CatFactViewController.swift in Sources */,
 				0264D2412AC00C9000117930 /* SavedFactsData.swift in Sources */,
-				02ADBF992AD0514D004CFE21 /* CoreDataStack.swift in Sources */,
 				0264D23D2ABFDA2600117930 /* CatPicData.swift in Sources */,
 				020627462ABEACE400C0C7BD /* AppDelegate.swift in Sources */,
 				020627482ABEACE400C0C7BD /* SceneDelegate.swift in Sources */,

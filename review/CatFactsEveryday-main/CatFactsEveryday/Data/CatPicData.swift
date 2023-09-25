@@ -12,12 +12,16 @@ struct CatPicData: Codable {
 }
 
 class CatPicAPI {
+    // !! The same what I wrote in APICaller. I would create something like CatPicAPIService with the parameters 'host' and 'apiKey' in init. This CatPicAPIService I would put in CatService, this CatService I would put in AppContext and use whereever it's needed.
+    // То же самое, что я написал в APICaller. Я бы создал что-то вроде CatPicAPIService с параметрами 'host' и 'apiKey' в init. Этот CatPicAPIService я помещаю в CatService, этот CatService я помещаю в AppContext и использую везде, где это необходимо.
     static let shared = CatPicAPI()
     
-    private let apiKey = "live_T8hJZQtkwYUQ2zMUcjIJKHLAwQcIZ3bPSTyGi2lonHWgotHoUJR5o3vBHZJx3E48-"
+    private let apiKey = "live_T8hJZQtkwYUQ2zMUcjIJKHLAwQcIZ3bPSTyGi2lonHWgotHoUJR5o3vBHZJx3E48-" 
     
     private init() {}
     
+    // !! Usually we create one WebAPIService which is responsible for sending requests and decoding the data transfer objects and use generics paramters in the Result. Otherwise you duplicate the code you already have in fetchRandomCatFact.
+    // Обычно мы создаем один WebAPIService, отвечающий за отправку запросов и декодирование объектов передачи данных, и используем родовые параметры в Result. В противном случае вы дублируете код, который уже есть в fetchRandomCatFact.
     func getCatPicture(completion: @escaping (Result<UIImage, Error>) -> Void) {
         let urlString = "https://api.thecatapi.com/v1/images/search"
         guard var urlComponents = URLComponents(string: urlString) else {

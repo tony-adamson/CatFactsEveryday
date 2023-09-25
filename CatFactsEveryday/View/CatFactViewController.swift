@@ -56,10 +56,9 @@ class CatFactViewController: UIViewController {
     
     @IBAction func saveFact(_ sender: Any) {
         if let text = catFact.text, !text.isEmpty {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let entity = NSEntityDescription.entity(forEntityName: "CatFactsCoreData", in: context)
-            let newFact = NSManagedObject(entity: entity!, insertInto: context)
-            newFact.setValue(text, forKey: "factCD")
+            let context = CoreDataStack.shared.persistentContainer.viewContext
+            let newFact = CatFactsCoreData(context: context)
+            newFact.factCD = text
 
             do {
                 try context.save()
@@ -70,6 +69,7 @@ class CatFactViewController: UIViewController {
             }
         }
     }
+
 
     //MARK: - Other functions
     func showErrorAlert(text: String) {

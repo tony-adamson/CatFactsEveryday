@@ -14,24 +14,21 @@ struct SavedFacts {
 
 extension SavedFacts {
     func saveData(fact: String) {
-        // 1. Получаем доступ к контексту CoreData
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
+        // Создаем контекст CoreData из shared CoreDataStack
+        let context = CoreDataStack.shared.persistentContainer.viewContext
 
-        // 2. Создаем новый объект "Fact" и устанавливаем значение атрибута "text"
-        let entity = NSEntityDescription.entity(forEntityName: "CatFactsCoreData", in: managedContext)!
-        let newFact = NSManagedObject(entity: entity, insertInto: managedContext)
-        newFact.setValue(fact, forKey: "factCD")
+        // Создаем новый объект "CatFactsCoreData" и устанавливаем значение атрибута "factCD"
+        let newFact = CatFactsCoreData(context: context)
+        newFact.factCD = fact
 
-        // 3. Сохраняем изменения в базе данных
+        // Сохраняем изменения в контексте CoreData
         do {
-            try managedContext.save()
+            try context.save()
             SavedFacts.arrayOfFacts.append(newFact) // Добавляем объект в массив для отображения
         } catch let error as NSError {
             print("Не удалось сохранить данные. Ошибка: \(error), \(error.userInfo)")
         }
     }
 }
+
 

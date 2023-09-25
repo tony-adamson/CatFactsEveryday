@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HGT-Yr-ZVa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Факты-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CatFactViewController" customModule="CatFactsEveryday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Для получения факта о кошках, нажмите на кнопку кнопку внизу экрана" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VPq-hx-eKr">
+                                <rect key="frame" x="16" y="163" width="361" height="256"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="gHC-Is-fxO"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересный факт о кошках:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAg-hu-j4c">
+                                <rect key="frame" x="16" y="75" width="276.66666666666669" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-Dw-Nwe">
+                                <rect key="frame" x="45" y="652.33333333333337" width="303" height="84.666666666666629"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cEi-LM-w7D">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="34.333333333333336"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POu-If-D6a">
+                                                <rect key="frame" x="0.0" y="0.0" width="143.66666666666666" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Получить факт"/>
+                                                <connections>
+                                                    <action selector="getCatFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUE-Bf-vKT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPy-vI-pam">
+                                                <rect key="frame" x="159.66666666666663" y="0.0" width="143.33333333333337" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Перевод">
+                                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="translateFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sqF-H9-NYD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cEi-LM-w7D" secondAttribute="height" multiplier="150:17" id="1sY-G0-Q8n"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lx4-9d-ZuC">
+                                        <rect key="frame" x="0.0" y="50.333333333333258" width="303" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Сохранить">
+                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g4u-O8-uDz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lx4-9d-ZuC" secondAttribute="trailing" id="VT2-AC-gAo"/>
+                                    <constraint firstItem="lx4-9d-ZuC" firstAttribute="leading" secondItem="Y6l-Dw-Nwe" secondAttribute="leading" id="uCi-s2-Rgl"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PAg-hu-j4c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="AlX-GF-QmM"/>
+                            <constraint firstItem="VPq-hx-eKr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H6R-bG-QoP"/>
+                            <constraint firstItem="Y6l-Dw-Nwe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KUg-NI-bgK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y6l-Dw-Nwe" secondAttribute="bottom" constant="32" id="O3e-0V-ld2"/>
+                            <constraint firstItem="VPq-hx-eKr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ppq-hj-9Ds"/>
+                            <constraint firstItem="PAg-hu-j4c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Rfg-WC-NRj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PAg-hu-j4c" secondAttribute="trailing" symbolic="YES" id="exz-Pz-8gY"/>
+                            <constraint firstItem="VPq-hx-eKr" firstAttribute="top" secondItem="PAg-hu-j4c" secondAttribute="bottom" constant="64" id="knB-k1-vXS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VPq-hx-eKr" secondAttribute="trailing" constant="16" id="tss-nj-JiV"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Факты" image="text.quote" catalog="system" id="QjP-0l-XXu"/>
+                    <connections>
+                        <outlet property="catFact" destination="VPq-hx-eKr" id="ryz-nf-OdC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515" y="741"/>
+        </scene>
+        <!--Избранное-->
+        <scene sceneID="3yO-KY-rze">
+            <objects>
+                <tableViewController id="NQO-Zi-dgh" customClass="ChosenFactsTableViewController" customModule="CatFactsEveryday" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qNJ-Fw-AUY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="factCell" id="1Oi-3q-HHh">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Oi-3q-HHh" id="bHB-pl-cLR">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NQO-Zi-dgh" id="uSV-cf-Wcq"/>
+                            <outlet property="delegate" destination="NQO-Zi-dgh" id="0LW-NE-jnb"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Избранное" image="heart" catalog="system" id="EHo-YV-Ffj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5c-wt-qwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="741"/>
+        </scene>
+        <!--Фото дня-->
+        <scene sceneID="4O2-ht-w8n">
+            <objects>
+                <viewController id="13t-H5-w57" customClass="CatPictureViewController" customModule="CatFactsEveryday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6U-Ep-q71">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBA-z2-9Mm">
+                                <rect key="frame" x="16" y="123" width="361" height="361"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dBA-z2-9Mm" secondAttribute="height" multiplier="1:1" id="a2J-jh-xqu"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yg-1E-Tl7">
+                                <rect key="frame" x="108" y="702" width="177" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Получить картинку"/>
+                                <connections>
+                                    <action selector="getPicture:" destination="13t-H5-w57" eventType="touchUpInside" id="fG6-HP-goO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3kq-OC-J2y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dBA-z2-9Mm" firstAttribute="top" secondItem="3kq-OC-J2y" secondAttribute="top" constant="64" id="7Mj-Mi-I30"/>
+                            <constraint firstItem="dBA-z2-9Mm" firstAttribute="leading" secondItem="3kq-OC-J2y" secondAttribute="leading" constant="16" id="7hR-hw-E8L"/>
+                            <constraint firstItem="3kq-OC-J2y" firstAttribute="bottom" secondItem="8Yg-1E-Tl7" secondAttribute="bottom" constant="32" id="CSV-T9-avb"/>
+                            <constraint firstItem="8Yg-1E-Tl7" firstAttribute="centerX" secondItem="S6U-Ep-q71" secondAttribute="centerX" id="Gf8-qC-A6z"/>
+                            <constraint firstItem="3kq-OC-J2y" firstAttribute="trailing" secondItem="dBA-z2-9Mm" secondAttribute="trailing" constant="16" id="kih-q4-8h8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Фото дня" image="photo" catalog="system" id="BQL-p0-QaY"/>
+                    <navigationItem key="navigationItem" id="6bN-Z0-PI6"/>
+                    <connections>
+                        <outlet property="catPictureView" destination="dBA-z2-9Mm" id="swo-UO-VLJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKQ-tJ-W7R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="741"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PIQ-4l-qrG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HGT-Yr-ZVa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pD1-dr-G2y">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="SUu-A1-p5I"/>
+                        <segue destination="13t-H5-w57" kind="relationship" relationship="viewControllers" id="CBv-VI-yYu"/>
+                        <segue destination="NQO-Zi-dgh" kind="relationship" relationship="viewControllers" id="RJG-rd-Wd3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8m-OJ-iV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81.679389312977094" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="text.quote" catalog="system" width="128" height="99"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
