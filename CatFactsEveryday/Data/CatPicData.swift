@@ -14,7 +14,7 @@ struct CatPicData: Codable {
 class CatPicAPI {
     static let shared = CatPicAPI()
     
-    private let apiKey = "live_T8hJZQtkwYUQ2zMUcjIJKHLAwQcIZ3bPSTyGi2lonHWgotHoUJR5o3vBHZJx3E48" 
+    private let apiKey = "live_T8hJZQtkwYUQ2zMUcjIJKHLAwQcIZ3bPSTyGi2lonHWgotHoUJR5o3vBHZJx3E48-" 
     
     private init() {}
     

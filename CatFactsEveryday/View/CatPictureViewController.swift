@@ -9,14 +9,15 @@ import UIKit
 
 class CatPictureViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet var catPictureView: UIView!
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: - IBAction
     @IBAction func getPicture(_ sender: Any) {
         // Вызываем функцию для получения случайной картинки кошки
         CatPicAPI.shared.getCatPicture { result in
@@ -40,20 +41,20 @@ class CatPictureViewController: UIViewController {
                 }
             case .failure(let error):
                 // Обработка ошибок
+                self.showErrorAlert(text: "Ошибка при получении изображения")
                 print("Ошибка при получении картинки кошки: \(error)")
             }
         }
     }
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Other functions
+    func showErrorAlert(text: String) {
+        let alert = UIAlertController(title: "Ошибка!", message: text, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
-    */
-
 }

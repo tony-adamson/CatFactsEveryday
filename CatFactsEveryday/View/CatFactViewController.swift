@@ -5,17 +5,20 @@
 //  Created by Антон Адамсон on 23.09.2023.
 //
 
+import CoreData
 import UIKit
 
 class CatFactViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet var catFact: UITextView!
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    //MARK: - IBAction
     @IBAction func getCatFact(_ sender: Any) {
         // Вызываем функцию для получения факта о кошках
             CatFact.fetchRandomCatFact { result in
@@ -27,6 +30,7 @@ class CatFactViewController: UIViewController {
                 }
             case .failure(let error):
                 // Обработка ошибок
+                self.showErrorAlert(text: "Ошибка получения факта")
                 print("Ошибка при получении факта о кошках: \(error)")
             }
         }
@@ -43,6 +47,7 @@ class CatFactViewController: UIViewController {
                         self.catFact.text = output
                     }
                 case .failure:
+                    self.showErrorAlert(text: "Перевод не был выполнен")
                     print("Failed")
                 }
             }
@@ -51,10 +56,31 @@ class CatFactViewController: UIViewController {
     
     @IBAction func saveFact(_ sender: Any) {
         if let text = catFact.text, !text.isEmpty {
-            SavedFacts.arrayOfFacts.append(text)
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "CatFactsCoreData", in: context)
+            let newFact = NSManagedObject(entity: entity!, insertInto: context)
+            newFact.setValue(text, forKey: "factCD")
+
+            do {
+                try context.save()
+                SavedFacts.arrayOfFacts.append(newFact)
+            } catch {
+                showErrorAlert(text: "Ошибка при сохранении данных")
+                print("Ошибка при сохранении данных: \(error)")
+            }
         }
     }
 
-    
+    //MARK: - Other functions
+    func showErrorAlert(text: String) {
+        let alert = UIAlertController(title: "Ошибка!", message: text, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
