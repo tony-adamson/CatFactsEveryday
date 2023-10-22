@@ -14,7 +14,8 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: "DataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Не удалось загрузить хранилище данных: \(error), \(error.userInfo)")
+                // !! Это слишком грубый способ обработки ошибки. Я бы предпочел выводить сообщение об ошибке
+                print("Не удалось загрузить хранилище данных: \(error), \(error.userInfo)")
             }
         })
         return container
@@ -27,7 +28,7 @@ class CoreDataStack {
                 try context.save()
             } catch {
                 let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }

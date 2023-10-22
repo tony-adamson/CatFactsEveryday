@@ -11,7 +11,6 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     // !! I don't thing AppDelegate is a good place to store this persistentContainer. You could create some AppContext which would hold some CatService where you would have some human-readable functions like saveCatFact and getCatFacts and this CatService could incapsulate the persistentContainer. CoreData is details of imaplementation, it could be Realm or some other database so it should be hidden from the user of the service and be possible to change datails without changing the interface.
-    // Я не думаю, что AppDelegate является хорошим местом для хранения этого persistentContainer. Вы можете создать некоторый AppContext, который будет содержать некоторый CatService, где у вас будут некоторые человекочитаемые функции, такие как saveCatFact и getCatFacts, и этот CatService может инкапсулировать persistentContainer. CoreData - это детали инкапсуляции, это может быть Realm или какая-либо другая база данных, поэтому она должна быть скрыта от пользователя сервиса и иметь возможность изменять данные без изменения интерфейса.
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in

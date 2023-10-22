@@ -25,6 +25,7 @@
 		0264D2412AC00C9000117930 /* SavedFactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264D2402AC00C9000117930 /* SavedFactsData.swift */; };
 		0264D2472AC0204500117930 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0264D2452AC0204500117930 /* DataModel.xcdatamodeld */; };
 		02ADBF992AD0514D004CFE21 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */; };
+		02ADBF9D2AD06074004CFE21 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADBF9C2AD06074004CFE21 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		0264D2402AC00C9000117930 /* SavedFactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFactsData.swift; sourceTree = "<group>"; };
 		0264D2462AC0204500117930 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		02ADBF9C2AD06074004CFE21 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +119,12 @@
 		020627442ABEACE400C0C7BD /* CatFactsEveryday */ = {
 			isa = PBXGroup;
 			children = (
-				020627452ABEACE400C0C7BD /* AppDelegate.swift */,
-				020627472ABEACE400C0C7BD /* SceneDelegate.swift */,
+				02ADBF9B2AD0603E004CFE21 /* App */,
 				0264D23B2ABFD9D400117930 /* Data */,
 				0264D2382ABFD99700117930 /* View */,
-				0206274B2ABEACE400C0C7BD /* Main.storyboard */,
+				02ADBF9A2AD05FF6004CFE21 /* Network */,
 				0206274E2ABEACE500C0C7BD /* Assets.xcassets */,
+				0206274B2ABEACE400C0C7BD /* Main.storyboard */,
 				020627502ABEACE500C0C7BD /* LaunchScreen.storyboard */,
 				020627532ABEACE500C0C7BD /* Info.plist */,
 			);
@@ -167,6 +169,23 @@
 				02ADBF982AD0514D004CFE21 /* CoreDataStack.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		02ADBF9A2AD05FF6004CFE21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				02ADBF9C2AD06074004CFE21 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		02ADBF9B2AD0603E004CFE21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				020627452ABEACE400C0C7BD /* AppDelegate.swift */,
+				020627472ABEACE400C0C7BD /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +336,7 @@
 				020627462ABEACE400C0C7BD /* AppDelegate.swift in Sources */,
 				020627482ABEACE400C0C7BD /* SceneDelegate.swift in Sources */,
 				0264D23F2ABFFF6200117930 /* ChosenFactsTableViewController.swift in Sources */,
+				02ADBF9D2AD06074004CFE21 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

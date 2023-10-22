@@ -21,7 +21,7 @@ class CatFactViewController: UIViewController {
     //MARK: - IBAction
     @IBAction func getCatFact(_ sender: Any) {
         // Вызываем функцию для получения факта о кошках
-            CatFact.fetchRandomCatFact { result in
+            APIClient.getTextDataNoApiKey() { result in
             switch result {
             case .success(let catFact):
                 // Обновляем текст в UITextView
